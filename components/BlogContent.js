@@ -36,7 +36,7 @@ const serializers = {
 
 const BlogContent = ({content}) =>
   <BlockContent
-    serializers={s} 
+    serializers={serializers} 
     blocks={content}
   />
 
