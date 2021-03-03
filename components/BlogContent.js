@@ -2,7 +2,6 @@ import BlockContent from '@sanity/block-content-to-react';
 import React from 'react'
 import getYouTubeId from 'get-youtube-id'
 import YouTube from 'react-youtube'
-// import InstagramPost from 'react-instagram-embed'
 import HighlightCode from 'components/HighlightCode'; 
 import { urlFor } from 'lib/api';
 
@@ -21,17 +20,7 @@ const serializers = {
         const id = getYouTubeId(url)
         return (<YouTube videoId={id} />)
       },
-      // instagramPost: ({ value }) => {
-      //   const { url } = value;
-      //   return (
-      //     <InstagramPost
-      //       url={url}
-      //       maxWidth={480}
-      //       containerTagName="div"
-      //       injectScript
-      //     />
-      //   );
-      // }
+      
       image: ({node: {asset, alt, position = 'center'}}) => {
 
         return (
