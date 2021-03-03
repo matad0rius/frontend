@@ -56,7 +56,7 @@ export default function Home({blogs, preview}) {
 
   const {
     data, size, setSize, hitEnd
-  } = useGetBlogsPages({filter});
+  } = useGetBlogsPages({filter, blogs});
 
   return (
     <PageLayout>

@@ -1,3 +1,4 @@
+
 import { Card } from 'react-bootstrap';
 import Link from 'next/link';
 import { urlFor } from 'lib/api';
@@ -38,8 +39,6 @@ const CardItem = ({title, subtitle, image, date, author, link, mode = 'normal'})
                 src={
                   urlFor(image)
                     .height(300)
-                    .crop('center')
-                    .fit('clip')
                     .url()}
                 alt="Card image cap"
               />
@@ -54,8 +53,12 @@ const CardItem = ({title, subtitle, image, date, author, link, mode = 'normal'})
               </>
             :
               <>
-                <Card.Title className="card-main-title">{title}</Card.Title>
-                <Card.Text>{subtitle}</Card.Text>
+                <Card.Title className="card-main-title">{
+                  title.length > 40 ?
+                    subtitle.substr(0, 40) + '...' : title}</Card.Title>
+                <Card.Text>{
+                  subtitle.length > 40 ?
+                    subtitle.substr(0, 40) + '...' : subtitle}</Card.Text>
               </>
             }
         </Card.Body>
